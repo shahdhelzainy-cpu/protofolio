@@ -1,4 +1,5 @@
 
+
 const dishes = {
   noodles: {
     name: "Chicken Noodles",
@@ -501,10 +502,167 @@ $("#finishOrder").addEventListener("click", () => {
   );
 });
 
-/* Start the website */
-renderCart();
-filterMenu("all");
 
+/* ===== sh.z Chatbot ===== */
+
+const chatLauncher = document.getElementById("chatLauncher");
+const chatPanel = document.getElementById("chatPanel");
+const chatClose = document.getElementById("chatClose");
+const chatMessages = document.getElementById("chatMessages");
+const chatForm = document.getElementById("chatForm");
+const chatInput = document.getElementById("chatInput");
+
+// Open and close chatbot
+chatLauncher.addEventListener("click", () => {
+  chatPanel.classList.toggle("open");
+
+  if (chatPanel.classList.contains("open")) {
+    chatInput.focus();
+  }
+});
+
+chatClose.addEventListener("click", () => {
+  chatPanel.classList.remove("open");
+});
+
+// Add a message safely
+function addChatMessage(text, sender) {
+  const message = document.createElement("div");
+
+  message.classList.add("chat-bubble", sender);
+  message.textContent = text;
+
+  chatMessages.appendChild(message);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+// Welcome message
+addChatMessage(
+  "Welcome to sh.z! 🐉\nأهلاً بيكي في sh.z! ❤️\nAsk me about our menu, prices or delivery.",
+  "bot"
+);
+
+// Chatbot answers
+function getChatReply(message) {
+  const text = message.toLowerCase();
+  const arabic = /[\u0600-\u06FF]/.test(message);
+
+  if (
+    text.includes("menu") ||
+    text.includes("منيو") ||
+    text.includes("أكل") ||
+    text.includes("اكل") ||
+    text.includes("dishes")
+  ) {
+    return arabic
+      ? "🍜 المنيو بتاعنا:\n• Chicken Noodles — 180 جنيه\n• Fried Rice — 160 جنيه\n• Spring Rolls — 95 جنيه\n• Chicken Dumplings — 130 جنيه"
+      : "🍜 Our menu:\n• Chicken Noodles — 180 EGP\n• Fried Rice — 160 EGP\n• Spring Rolls — 95 EGP\n• Chicken Dumplings — 130 EGP";
+  }
+
+  if (
+    text.includes("price") ||
+    text.includes("prices") ||
+    text.includes("سعر") ||
+    text.includes("بكام") ||
+    text.includes("كام")
+  ) {
+    return arabic
+      ? "💰 أسعارنا:\nالنودلز: 180 جنيه\nالأرز المقلي: 160 جنيه\nالسبرينج رولز: 95 جنيه\nالدامبلنج: 130 جنيه."
+      : "💰 Our prices:\nChicken Noodles: 180 EGP\nFried Rice: 160 EGP\nSpring Rolls: 95 EGP\nChicken Dumplings: 130 EGP.";
+  }
+
+  if (
+    text.includes("delivery") ||
+    text.includes("توصيل") ||
+    text.includes("شحن")
+  ) {
+    return arabic
+      ? "🛵 رسوم التوصيل 35 جنيه، والتوصيل مجاني للطلبات فوق 500 جنيه."
+      : "🛵 Delivery costs 35 EGP. Delivery is free on orders over 500 EGP.";
+  }
+
+  if (
+    text.includes("hours") ||
+    text.includes("open") ||
+    text.includes("مواعيد") ||
+    text.includes("فاتح") ||
+    text.includes("بتفتح")
+  ) {
+    return arabic
+      ? "🕒 مواعيدنا يوميًا من الساعة 12 ظهرًا لحد 12 منتصف الليل."
+      : "🕒 We are open daily from 12 PM to 12 AM.";
+  }
+
+  if (
+    text.includes("hello") ||
+    text.includes("hi") ||
+    text.includes("hey") ||
+    text.includes("أهلا") ||
+    text.includes("اهلا") ||
+    text.includes("السلام عليكم")
+  ) {
+    return arabic
+      ? "أهلاً بيكي في sh.z! ❤️ تحبي تعرفي المنيو ولا الأسعار ولا التوصيل؟"
+      : "Hello and welcome to sh.z! ❤️ Would you like to know about our menu, prices or delivery?";
+  }
+
+  if (
+    text.includes("thank") ||
+    text.includes("شكرا") ||
+    text.includes("متشكرة")
+  ) {
+    return arabic
+      ? "العفو ❤️ نتمنى نشوفك قريب في sh.z!"
+      : "You're welcome! ❤️ We hope to see you soon at sh.z!";
+  }
+
+  if (
+    text.includes("order") ||
+    text.includes("طلب") ||
+    text.includes("اطلب")
+  ) {
+    return arabic
+      ? "❤️ اختاري الأكلة اللي تحبيها من المنيو واضغطي علامة + لإضافتها للسلة، وبعدها كمّلي الطلب. ملحوظة: الموقع تجريبي والطلبات مش بتتبعت لمطعم حقيقي."
+      : "❤️ Choose a dish from our menu and click + to add it to your bag. Then continue to checkout. Note: this is a demo website; orders are not sent to a real restaurant.";
+  }
+
+  return arabic
+    ? "معلش ❤️ مش عندي إجابة عن السؤال ده حاليًا. جربي تسأليني عن المنيو أو الأسعار أو التوصيل أو المواعيد."
+    : "Sorry ❤️ I don't have an answer for that yet. Try asking about our menu, prices, delivery or opening hours.";
+}
+
+// Send a message
+function sendChatMessage(message) {
+  const text = message.trim();
+
+  if (!text) return;
+
+  addChatMessage(text, "user");
+  addChatMessage(getChatReply(text), "bot");
+}
+
+// Handle typing and sending
+chatForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  sendChatMessage(chatInput.value);
+  chatInput.value = "";
+  chatInput.focus();
+});
+
+// Quick question buttons
+document.querySelectorAll("[data-chat]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const questions = {
+      menu: "menu",
+      prices: "prices",
+      delivery: "delivery",
+      hours: "hours"
+    };
+
+    sendChatMessage(questions[button.dataset.chat]);
+  });
+});
 
 
 
