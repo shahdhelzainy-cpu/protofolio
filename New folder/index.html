@@ -1,0 +1,504 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#15100f">
+  <meta name="description" content="sh.z Modern Chinese Kitchen">
+  <title>sh.z | Modern Chinese Kitchen</title>
+
+  <!-- ربط ملف التصميم -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- ربط ملف JavaScript -->
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <div class="announcement">
+    Complimentary delivery on orders over EGP 500 · Made fresh, served with heart
+  </div>
+
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="#home">
+        <span class="brand-mark">sh</span>
+        <span class="brand-name">sh.z
+          <small>Modern Chinese Kitchen</small>
+        </span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" data-en="Home" data-ar="الرئيسية">Home</a>
+        <a href="#menu" data-en="Our menu" data-ar="المنيو">Our menu</a>
+        <a href="#story" data-en="Our story" data-ar="حكايتنا">Our story</a>
+        <a href="#contact" data-en="Visit us" data-ar="زورونا">Visit us</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-button" id="languageButton">AR</button>
+
+        <button class="icon-button" id="cartButton" aria-label="Open cart">
+          🛍️ <span class="cart-count" id="cartCount">0</span>
+        </button>
+
+        <a class="button small" href="#menu"
+           data-en="Order now ↗" data-ar="اطلبي دلوقتي ↗">
+          Order now ↗
+        </a>
+
+        <button class="icon-button mobile-menu" id="mobileMenuButton">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"
+               data-en="A little taste of the extraordinary"
+               data-ar="طعم مختلف من أول لقمة">
+            A little taste of the extraordinary
+          </div>
+
+          <h1
+            data-en-html="Tradition in every bite.<br><em>Magic in every moment.</em>"
+            data-ar-html="أصالة في كل لقمة.<br><em>وسحر في كل لحظة.</em>">
+            Tradition in every bite.<br>
+            <em>Magic in every moment.</em>
+          </h1>
+
+          <p
+            data-en="A modern take on the Chinese classics you love. Thoughtfully made, beautifully served."
+            data-ar="تجربة عصرية لأكلات صينية بتحبيها، بمكونات مختارة وطعم معمول بحب.">
+            A modern take on the Chinese classics you love. Thoughtfully made, beautifully served.
+          </p>
+
+          <div class="hero-buttons">
+            <a class="button gold" href="#menu"
+               data-en="Explore the menu ↗" data-ar="اكتشفي المنيو ↗">
+              Explore the menu ↗
+            </a>
+
+            <a class="button outline" href="#story"
+               data-en="Our philosophy" data-ar="حكايتنا">
+              Our philosophy
+            </a>
+          </div>
+
+          <div class="hero-note">★★★★★ &nbsp; Made fresh. Shared gladly.</div>
+        </div>
+
+        <div class="hero-art">
+          <img
+            src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=1000&q=85"
+            alt="Chinese noodles"
+          >
+          <div class="photo-label">
+            Made with intention
+            <small>Our signature · Your new favourite</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="trust-strip">
+      <div class="container trust-inner">
+        <div class="trust-item">
+          <span>✳</span>
+          <div><strong data-en="Freshly prepared" data-ar="تحضير طازة">Freshly prepared</strong>
+            <small data-en="Made when you order" data-ar="بنحضّر طلبك وقتها">Made when you order</small>
+          </div>
+        </div>
+
+        <div class="trust-item">
+          <span>⌁</span>
+          <div><strong data-en="Bold flavour" data-ar="طعم غني">Bold flavour</strong>
+            <small data-en="Every ingredient matters" data-ar="كل مكوّن بيفرق">Every ingredient matters</small>
+          </div>
+        </div>
+
+        <div class="trust-item">
+          <span>♡</span>
+          <div><strong data-en="Made to be shared" data-ar="أحلى لما تتشارك">Made to be shared</strong>
+            <small data-en="Good food, good company" data-ar="أكل حلو وصحبة أحلى">Good food, good company</small>
+          </div>
+        </div>
+
+        <div class="trust-item">
+          <span>◈</span>
+          <div><strong data-en="Care in every detail" data-ar="اهتمام بكل تفصيلة">Care in every detail</strong>
+            <small data-en="From kitchen to table" data-ar="من المطبخ لحد عندك">From kitchen to table</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MENU -->
+    <section class="section" id="menu">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <div class="kicker" data-en="The sh.z selection" data-ar="اختيارات sh.z">
+              The sh.z selection
+            </div>
+            <h2 data-en-html="A menu worth<br>slowing down for."
+                data-ar-html="منيو يستاهل<br>تستمتعي بكل لقمة.">
+              A menu worth<br>slowing down for.
+            </h2>
+          </div>
+
+          <p data-en="Comforting classics and little favourites, prepared with care."
+             data-ar="أكلات كلاسيكية ومفضلات محضّرة بعناية.">
+            Comforting classics and little favourites, prepared with care.
+          </p>
+        </div>
+
+        <div class="filters">
+          <button class="filter-chip active" data-filter="all"
+                  data-en="All dishes" data-ar="كل الأطباق">All dishes</button>
+          <button class="filter-chip" data-filter="mains"
+                  data-en="Mains" data-ar="أطباق رئيسية">Mains</button>
+          <button class="filter-chip" data-filter="starters"
+                  data-en="Starters" data-ar="مقبلات">Starters</button>
+          <button class="filter-chip" data-filter="comfort"
+                  data-en="Comfort food" data-ar="أكلات مفضلة">Comfort food</button>
+        </div>
+
+        <div class="menu-grid" id="menuGrid">
+          <article class="menu-card" data-category="mains" data-id="noodles">
+            <div class="dish-art">
+              <img class="dish-photo"
+                src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=700&q=80"
+                alt="Chicken noodles">
+              <span class="dish-tag" data-en="Guest favourite" data-ar="الأكثر طلبًا">Guest favourite</span>
+            </div>
+            <div class="dish-info">
+              <div class="dish-meta" data-en="Wok · Main" data-ar="طبق رئيسي">Wok · Main</div>
+              <h3 data-en="Chicken Noodles" data-ar="نودلز بالدجاج">Chicken Noodles</h3>
+              <p data-en="Wok-tossed noodles, tender chicken and house sauce."
+                 data-ar="نودلز بالدجاج الطري وصوص البيت الغني.">
+                Wok-tossed noodles, tender chicken and house sauce.
+              </p>
+              <div class="dish-bottom">
+                <div class="price">180 <small>EGP</small></div>
+                <button class="add-btn" data-add="noodles" aria-label="Add noodles">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card" data-category="mains comfort" data-id="rice">
+            <div class="dish-art">
+              <img class="dish-photo"
+                src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=700&q=80"
+                alt="Fried rice">
+              <span class="dish-tag" data-en="House classic" data-ar="كلاسيك البيت">House classic</span>
+            </div>
+            <div class="dish-info">
+              <div class="dish-meta" data-en="Wok · Main" data-ar="طبق رئيسي">Wok · Main</div>
+              <h3 data-en="Fried Rice" data-ar="أرز مقلي">Fried Rice</h3>
+              <p data-en="Fragrant rice with crisp vegetables and sesame."
+                 data-ar="أرز معطّر وخضار مقرمش ولمسة سمسم.">
+                Fragrant rice with crisp vegetables and sesame.
+              </p>
+              <div class="dish-bottom">
+                <div class="price">160 <small>EGP</small></div>
+                <button class="add-btn" data-add="rice" aria-label="Add rice">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card" data-category="starters" data-id="rolls">
+            <div class="dish-art">
+              <img class="dish-photo"
+                src="https://images.unsplash.com/photo-1548507200-3a1d9f4e9c69?auto=format&fit=crop&w=700&q=80"
+                alt="Spring rolls">
+              <span class="dish-tag" data-en="Crispy favourite" data-ar="قرمشة مميزة">Crispy favourite</span>
+            </div>
+            <div class="dish-info">
+              <div class="dish-meta" data-en="Starter" data-ar="مقبلات">Starter</div>
+              <h3 data-en="Spring Rolls" data-ar="سبرينج رولز">Spring Rolls</h3>
+              <p data-en="Golden, crisp rolls with a fresh vegetable filling."
+                 data-ar="رولز دهبي ومقرمش بحشوة خضار طازة.">
+                Golden, crisp rolls with a fresh vegetable filling.
+              </p>
+              <div class="dish-bottom">
+                <div class="price">95 <small>EGP</small></div>
+                <button class="add-btn" data-add="rolls" aria-label="Add spring rolls">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card" data-category="starters comfort" data-id="dumplings">
+            <div class="dish-art">
+              <img class="dish-photo"
+                src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=700&q=80"
+                alt="Chicken dumplings">
+              <span class="dish-tag" data-en="Hand-finished" data-ar="لمسة يدويّة">Hand-finished</span>
+            </div>
+            <div class="dish-info">
+              <div class="dish-meta" data-en="Starter" data-ar="مقبلات">Starter</div>
+              <h3 data-en="Chicken Dumplings" data-ar="دامبلنج بالدجاج">Chicken Dumplings</h3>
+              <p data-en="Soft dumplings with seasoned chicken and dipping sauce."
+                 data-ar="دامبلنج طري بحشوة دجاج متبّلة وصوص للتغميس.">
+                Soft dumplings with seasoned chicken and dipping sauce.
+              </p>
+              <div class="dish-bottom">
+                <div class="price">130 <small>EGP</small></div>
+                <button class="add-btn" data-add="dumplings" aria-label="Add dumplings">+</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <section class="section story" id="story">
+      <div class="container story-grid">
+        <div class="story-art">
+          <span>味</span>
+          <small>Good food is a feeling.</small>
+        </div>
+
+        <div class="story-copy">
+          <div class="kicker" data-en="A little about us" data-ar="حكايتنا">A little about us</div>
+          <h2 data-en-html="Not just a meal.<br>A moment to remember."
+              data-ar-html="مش مجرد أكلة.<br>دي لحظة تفضل فاكرها.">
+            Not just a meal.<br>A moment to remember.
+          </h2>
+          <p data-en="At sh.z, we believe the best meals are the ones that make you pause, savour, and reach for one more bite."
+             data-ar="في sh.z بنؤمن إن أحلى أكل هو اللي يخليكي تستمتعي وترجعي تاخدي لقمة كمان.">
+            At sh.z, we believe the best meals are the ones that make you pause, savour, and reach for one more bite.
+          </p>
+          <p data-en="Every detail matters: flavour, freshness, and the joy of sharing."
+             data-ar="كل تفصيلة بتفرق: الطعم والمكونات الطازة وفرحة المشاركة.">
+            Every detail matters: flavour, freshness, and the joy of sharing.
+          </p>
+          <a class="button" href="#menu"
+             data-en="Find your favourite ↗" data-ar="اختاري طبقك ↗">
+            Find your favourite ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="promo">
+      <div class="container promo-inner">
+        <div>
+          <h2 data-en="Your next favourite is one click away."
+              data-ar="أكلتك المفضلة الجاية على بُعد كليك.">
+            Your next favourite is one click away.
+          </h2>
+          <p data-en="Make tonight a little more delicious."
+             data-ar="خلّي يومك ألذ شوية.">
+            Make tonight a little more delicious.
+          </p>
+        </div>
+        <a class="button gold" href="#menu"
+           data-en="Order now ↗" data-ar="اطلبي دلوقتي ↗">Order now ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="contact">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="#home">
+          <span class="brand-mark">sh</span>
+          <span class="brand-name">sh.z<small>Modern Chinese Kitchen</small></span>
+        </a>
+        <p data-en="A fresh take on Chinese-inspired comfort food."
+           data-ar="تجربة جديدة لأكلات مستوحاة من المطبخ الصيني.">
+          A fresh take on Chinese-inspired comfort food.
+        </p>
+      </div>
+
+      <div>
+        <h4 data-en="Explore" data-ar="اكتشفي">Explore</h4>
+        <a href="#menu" data-en="Our menu" data-ar="المنيو">Our menu</a>
+        <a href="#story" data-en="Our story" data-ar="حكايتنا">Our story</a>
+      </div>
+
+      <div>
+        <h4 data-en="Say hello" data-ar="تواصلوا معانا">Say hello</h4>
+        <p data-en="Made with care, in Egypt" data-ar="معمول بحب في مصر">Made with care, in Egypt</p>
+        <p>Daily · 12 PM — 12 AM</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      © 2026 sh.z · MODERN CHINESE KITCHEN
+      <span>Demo website · No real payments</span>
+    </div>
+  </footer>
+
+  <!-- CART OVERLAY -->
+  <div class="overlay" id="overlay"></div>
+
+  <aside class="drawer" id="cartDrawer" aria-label="Shopping cart">
+    <div class="drawer-head">
+      <h2 data-en="Your bag" data-ar="سلتك">Your bag</h2>
+      <button class="close-btn" id="closeCart">×</button>
+    </div>
+
+    <div class="cart-items" id="cartItems"></div>
+
+    <div class="drawer-foot">
+      <div class="subtotal">
+        <span data-en="Subtotal" data-ar="الإجمالي الفرعي">Subtotal</span>
+        <strong id="cartSubtotal">0 EGP</strong>
+      </div>
+      <p data-en="Free delivery over EGP 500."
+         data-ar="توصيل مجاني للطلبات فوق 500 جنيه.">
+        Free delivery over EGP 500.
+      </p>
+      <button class="button" id="checkoutButton"
+              data-en="Continue to checkout ↗" data-ar="كمّلي الطلب ↗">
+        Continue to checkout ↗
+      </button>
+    </div>
+  </aside>
+
+  <!-- CHECKOUT -->
+  <section class="checkout-view" id="checkoutView">
+    <div class="checkout-top">
+      <div class="container checkout-top-inner">
+        <a class="brand" href="#home" id="checkoutBrand">
+          <span class="brand-mark">sh</span>
+          <span class="brand-name">sh.z<small>Modern Chinese Kitchen</small></span>
+        </a>
+        <h2 data-en="Almost yours." data-ar="طلبك قرب يجهز.">Almost yours.</h2>
+        <button class="button outline small" id="backToMenu"
+                data-en="Back to menu" data-ar="رجوع للمنيو">
+          Back to menu
+        </button>
+      </div>
+    </div>
+
+    <div class="container checkout-layout" id="checkoutLayout">
+      <div>
+        <div class="kicker" data-en="Complete your order" data-ar="كمّلي طلبك">
+          Complete your order
+        </div>
+        <h1 class="checkout-title" data-en="Checkout" data-ar="إتمام الطلب">Checkout</h1>
+        <p class="checkout-sub"
+           data-en="Enter your details to complete the demo order."
+           data-ar="اكتبي بياناتك عشان تكمّلي الطلب التجريبي.">
+          Enter your details to complete the demo order.
+        </p>
+
+        <form id="checkoutForm">
+          <div class="form-grid">
+            <div class="field">
+              <label for="fullName" data-en="Full name" data-ar="الاسم بالكامل">Full name</label>
+              <input id="fullName" name="fullName" required placeholder="Your name">
+            </div>
+
+            <div class="field">
+              <label for="phone" data-en="Phone number" data-ar="رقم الموبايل">Phone number</label>
+              <input id="phone" name="phone" type="tel" required placeholder="01X XXXX XXXX">
+            </div>
+
+            <div class="field full">
+              <label for="address" data-en="Delivery address" data-ar="عنوان التوصيل">Delivery address</label>
+              <input id="address" name="address" required placeholder="Street, area, building">
+            </div>
+
+            <div class="field">
+              <label for="area" data-en="Area / city" data-ar="المنطقة / المدينة">Area / city</label>
+              <input id="area" name="area" required placeholder="Your area">
+            </div>
+
+            <div class="field">
+              <label for="deliveryTime" data-en="Delivery time" data-ar="ميعاد التوصيل">Delivery time</label>
+              <select id="deliveryTime" name="deliveryTime">
+                <option value="asap" data-en="As soon as possible" data-ar="في أقرب وقت">As soon as possible</option>
+                <option value="later" data-en="Call me to arrange" data-ar="اتصلوا بيا نحدد الميعاد">Call me to arrange</option>
+              </select>
+            </div>
+
+            <div class="field full">
+              <label for="notes" data-en="Order notes (optional)" data-ar="ملاحظات (اختياري)">Order notes (optional)</label>
+              <input id="notes" name="notes" placeholder="Anything we should know?">
+            </div>
+          </div>
+
+          <div class="payment-note"
+               data-en="DEMO ONLY: No payment is collected and no order is sent to a real restaurant."
+               data-ar="نسخة تجريبية فقط: لا يتم تحصيل فلوس أو إرسال الطلب لمطعم حقيقي.">
+            DEMO ONLY: No payment is collected and no order is sent to a real restaurant.
+          </div>
+
+          <button class="button full-button" type="submit"
+                  data-en="Place demo order ↗" data-ar="تأكيد الطلب التجريبي ↗">
+            Place demo order ↗
+          </button>
+        </form>
+      </div>
+
+      <aside class="order-summary">
+        <h3 data-en="Order summary" data-ar="ملخص الطلب">Order summary</h3>
+        <div id="checkoutItems"></div>
+        <div class="summary-line">
+          <span data-en="Delivery" data-ar="التوصيل">Delivery</span>
+          <strong id="deliveryFee">35 EGP</strong>
+        </div>
+        <div class="summary-line">
+          <span data-en="Discount" data-ar="الخصم">Discount</span>
+          <strong id="discountAmount">0 EGP</strong>
+        </div>
+        <div class="summary-total">
+          <span data-en="Total" data-ar="الإجمالي">Total</span>
+          <strong id="checkoutTotal">0 EGP</strong>
+        </div>
+      </aside>
+    </div>
+
+    <div class="success-state" id="successState">
+      <div class="success-mark">✓</div>
+      <h2 data-en="Order received!" data-ar="تم تأكيد الطلب!">Order received!</h2>
+      <p id="successMessage">Your demo order is ready.</p>
+      <button class="button" id="finishOrder"
+              data-en="Back to sh.z ↗" data-ar="الرجوع لـ sh.z ↗">
+        Back to sh.z ↗
+      </button>
+    </div>
+  </section>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+
+<button class="chat-launcher" id="chatLauncher">💬</button>
+
+<section class="chat-panel" id="chatPanel">
+  <div class="chat-head">
+    <strong>sh.z Assistant</strong>
+    <button id="chatClose">×</button>
+  </div>
+
+  <div class="chat-messages" id="chatMessages"></div>
+
+  <div class="chat-quick">
+    <button data-chat="menu">Menu</button>
+    <button data-chat="prices">Prices</button>
+    <button data-chat="delivery">Delivery</button>
+    <button data-chat="hours">Opening hours</button>
+  </div>
+
+  <form class="chat-form" id="chatForm">
+    <input id="chatInput" placeholder="Ask us anything..." />
+    <button type="submit">↑</button>
+  </form>
+</section>
+
+ 
+
+</body>
+</html>
