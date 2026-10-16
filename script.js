@@ -547,6 +547,14 @@ function getChatReply(message) {
   const text = message.toLowerCase();
   const arabic = /[\u0600-\u06FF]/.test(message);
 
+    if (text.includes("قول كلمة السر")) {
+    return "كوفي ☕❤️";
+  }
+
+  if (text.trim() === "كولا") {
+    return "حبيبي 😂❤️";
+  }
+
   if (
     text.includes("menu") ||
     text.includes("منيو") ||
@@ -631,6 +639,7 @@ function getChatReply(message) {
     : "Sorry ❤️ I don't have an answer for that yet. Try asking about our menu, prices, delivery or opening hours.";
 }
 
+
 // Send a message
 function sendChatMessage(message) {
   const text = message.trim();
@@ -663,6 +672,5 @@ document.querySelectorAll("[data-chat]").forEach((button) => {
     sendChatMessage(questions[button.dataset.chat]);
   });
 });
-
 
 
